@@ -1,0 +1,21 @@
+{
+  "name": "Zyven lib",
+  "version": "1.0.0",
+  "description": "Component Library",
+  "license": "ISC",
+  "author": "Lucky",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+   "files": ["dist"],
+  "scripts": {
+    "build": "tsup"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+   "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.2"
+  }
+}
