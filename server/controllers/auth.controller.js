@@ -73,9 +73,9 @@ export const googleAuth = async (req, res) => {
         // Set cookie
         // -------------------------------------------------------
         res.cookie("token", token, {
-            httpOnly: true,
-            secure: false,          // false for HTTP localhost development
-            sameSite: "lax",        // "lax" works with cross-origin localhost:5173 -> localhost:8000
+            httpOnly: false,
+            secure: true,          // false for HTTP localhost development
+            sameSite: "none",        // "lax" works with cross-origin localhost:5173 -> localhost:8000
             maxAge: 7 * 24 * 60 * 60 * 1000,
         });
 
@@ -102,9 +102,9 @@ export const googleAuth = async (req, res) => {
 export const logout = async (req, res) => {
     try {
         res.clearCookie("token", {
-            httpOnly: true,
-            secure: false,
-            sameSite: "lax",
+            httpOnly: false,
+            secure: true,
+            sameSite: "none",
         });
 
         return res.status(200).json({
